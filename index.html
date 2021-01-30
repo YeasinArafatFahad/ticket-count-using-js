@@ -112,12 +112,11 @@
             function main(ticket, valueIncrease) {
                 const ticketCount = getTicket(ticket);
                 let newTicketCount = ticketCount
+                if (valueIncrease == true) {
+                    newTicketCount = ticketCount + 1;
+                }
                 if (valueIncrease == false && ticketCount > 0) {
                     newTicketCount = ticketCount - 1;
-                }
-                else {
-                   
-                    newTicketCount = ticketCount + 1;
 
                 }
                 document.getElementById(ticket + '-count').value = newTicketCount;
@@ -125,7 +124,7 @@
                 if (ticket == 'firstClassTicket') {
                     totalTicket = newTicketCount * 150
                 }
-                else {
+                if (ticket == 'economyClassTicket') {
                     totalTicket = newTicketCount * 100
                 }
                 document.getElementById(ticket + '-total').innerText;
